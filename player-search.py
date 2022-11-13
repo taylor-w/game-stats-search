@@ -1,9 +1,10 @@
 # imports
 import requests
 import json
+import constants
 
 # input: global vars
-key = ""
+trackergg_key = constants.trackergg_api_key
 
 # input: end-user input vars
 print("Enter player name:")
@@ -15,7 +16,7 @@ platformUserIdentifier = userInput
 
 # input: request header vars
 headers = {
- "TRN-Api-Key": key,
+ "TRN-Api-Key": trackergg_key,
  "platform": platform,
  "platformUserIdentifier": platformUserIdentifier
 }
