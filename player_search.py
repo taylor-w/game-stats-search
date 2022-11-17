@@ -85,4 +85,3 @@ def main():
     # print(f'Test res content type: {type(res2.content)}')
     # print(f'Test res data type: {type(res_data)}')
     # print(f'Test json data type: {type(json_data)}')
-main()
