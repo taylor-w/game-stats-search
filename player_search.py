@@ -1,9 +1,9 @@
-# imports
-import requests
-import json
-import constants
+def main():
+    # imports
+    import requests
+    import json
+    import constants
 
-main():
     # input: global vars
     trackergg_key = constants.trackergg_api_key
     apexlegendsapi_key = constants.apexlegendsapi_key
