@@ -32,6 +32,7 @@ json_data = json.loads(res_data)
 # print(json.dumps(json_data, indent=4))
 
 # output: print desired results
+# apex platform data
 apex_platform = json_data["global"]["platform"]
 apex_season = json_data["global"]["rank"]["rankedSeason"]
 player_name = json_data["global"]["name"]
@@ -45,7 +46,7 @@ apex_global_data = {
     "Level": apex_level,
     "Rank": apex_rank
 }
-
+# apex real time legend data
 selected_legend = json_data["realtime"]["selectedLegend"]
 is_online = json_data["realtime"]["isOnline"]
 is_in_Game = json_data["realtime"]["isInGame"]
@@ -54,14 +55,14 @@ apex_realtime_data = {
     "Online Status": is_online,
     "In Game Status": is_in_Game
 }
-
+# apex selected legend data
 selected_legend_name = json_data["legends"]["selected"]["LegendName"]
 selected_legend_data = json_data["legends"]["selected"]["data"]
 apex_selected_legend_data = {
     "Selected Legend": selected_legend_name,
     "Selected Legend Data": selected_legend_data
 }
-
+# apex all legend data
 all_legend_data = json_data["legends"]["all"]
 apex_played_legend_data = {}
 # process: access played legend data
@@ -73,6 +74,7 @@ for legend in all_legend_data:
         # print(all_legend_data[legend]["data"])
         apex_played_legend_data[legend] = all_legend_data[legend]["data"]
 
+# output: apex legends v1 data pull
 print(json.dumps(apex_global_data, indent=4))
 print(json.dumps(apex_realtime_data, indent=4))
 print(json.dumps(apex_selected_legend_data, indent=4))
