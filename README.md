@@ -5,8 +5,9 @@ Leveraging public APIs, retrieve in-game based statistics about a particular pla
 * [tracker.gg](https://tracker.gg/developers/docs/getting-started)
 
 ## TODOs
-1. Validate processed data
+1. ~~Validate processed data~~
 2. Build desired output from processed data
+3. Refactor code to reusable function based logic
 
 ## Future State
 * Supply near real-time stats about a player from online video game title
