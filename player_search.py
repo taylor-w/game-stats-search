@@ -1,4 +1,7 @@
-def main():
+def main(player):
+    print(player)
+    # temp hardcode
+    platform = "PC"
     # imports
     import requests
     import json
@@ -8,11 +11,6 @@ def main():
     trackergg_key = constants.trackergg_api_key
     apexlegendsapi_key = constants.apexlegendsapi_key
 
-    # input: end-user input vars
-    print("Enter Apex platform, i.e) PC, PS4, X1:")
-    platform = input()
-    print("Enter player name:")
-    player = input()
 
     # input: request header vars
     apexlegendsapi_header = {
@@ -76,12 +74,9 @@ def main():
             apex_played_legend_data[legend] = all_legend_data[legend]["data"]
 
     # output: apex legends v1 data pull
-    print(json.dumps(apex_global_data, indent=4))
-    print(json.dumps(apex_realtime_data, indent=4))
-    print(json.dumps(apex_selected_legend_data, indent=4))
-    print(json.dumps(apex_played_legend_data, indent=4))
-
-    # debug: show data types
-    # print(f'Test res content type: {type(res2.content)}')
-    # print(f'Test res data type: {type(res_data)}')
-    # print(f'Test json data type: {type(json_data)}')
+    results = {}
+    results["global_data"] = json.dumps(apex_global_data, indent=4)
+    results["realtime_data"] = json.dumps(apex_realtime_data, indent=4)
+    results["selected_data"] = json.dumps(apex_selected_legend_data, indent=4)
+    # results["played_data"] = json.dumps(apex_played_legend_data, indent=4)
+    return results
